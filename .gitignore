@@ -1,0 +1,23 @@
+# Build outputs
+target/
+
+# Local Maven repository used in this project
+.m2/
+
+# Runtime data
+data/
+
+# JavaFX local cache
+.openjfx/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
