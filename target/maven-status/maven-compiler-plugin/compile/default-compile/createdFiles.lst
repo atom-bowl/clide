@@ -1,0 +1,15 @@
+com\example\taskmanager\dto\TaskFilter.class
+com\example\taskmanager\ui\MainView.class
+com\example\taskmanager\Main.class
+com\example\taskmanager\repo\TaskRepository.class
+com\example\taskmanager\service\TaskServiceImpl.class
+com\example\taskmanager\domain\Task.class
+com\example\taskmanager\service\TaskNotFoundException.class
+com\example\taskmanager\domain\TaskStatus.class
+com\example\taskmanager\TaskManagerApplication.class
+com\example\taskmanager\dto\UpdateTaskCommand.class
+com\example\taskmanager\service\TaskService.class
+com\example\taskmanager\ui\MainController.class
+com\example\taskmanager\ApplicationLauncher.class
+com\example\taskmanager\dto\CreateTaskCommand.class
+com\example\taskmanager\dto\TaskDto.class

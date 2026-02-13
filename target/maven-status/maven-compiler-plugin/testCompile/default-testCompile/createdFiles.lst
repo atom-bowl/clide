@@ -1,0 +1,4 @@
+com\example\taskmanager\integration\TaskServiceIntegrationTest.class
+com\example\taskmanager\ui\MainControllerTest.class
+com\example\taskmanager\service\TaskServiceImplTest.class
+com\example\taskmanager\search\TaskSearchTest.class
