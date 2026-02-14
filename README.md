@@ -8,9 +8,9 @@ A powerful desktop productivity suite with task management, calendar, TODO lists
 
 **The easiest way to use Clide:**
 
-1. **Download** the `app/` folder from this repository
-2. **Run** `app\Clide\Clide.exe`
-3. **That's it!** No Java installation needed - everything is bundled.
+1. Build or download `app\Clide-1.1.0.exe`
+2. Run the installer
+3. Launch Clide from Start Menu/Desktop shortcut
 
 The app runs completely offline and stores all your data locally.
 
@@ -74,18 +74,12 @@ If `mvn` is not on your PATH, use:
 
 ## 📦 Distribution
 
-### Pre-built App (Recommended for Users)
+### Pre-built Installer (Recommended for Users)
 
-The `app/Clide/` folder contains a ready-to-run Windows application:
-- **No Java required** - JRE is bundled
-- **No installation** - just download and run
-- **Portable** - copy to USB drive or anywhere
-- **Size**: ~100MB (includes everything needed)
-
-**To distribute:**
-1. Zip the `app/Clide/` folder
-2. Share the zip file
-3. Users extract and run `Clide.exe`
+The `app/Clide-1.1.0.exe` file is a Windows installer:
+- **No Java required** - runtime is bundled
+- **Windows integration** - Start Menu and shortcuts
+- **Upgrade-ready** - supports in-place updates with the same `winUpgradeUuid`
 
 ### Building from Source
 
@@ -95,18 +89,18 @@ To rebuild the application:
 .\build-exe.ps1
 ```
 
-This creates `app\Clide\` - a portable application folder that bundles the JRE and all dependencies.
+This creates `app\Clide-1.1.0.exe`.
 
 ### Creating a Windows Installer (.exe)
 
-To create a single-file installer instead of a portable app, see **[docs/INSTALLER.md](docs/INSTALLER.md)** for complete instructions.
+For installer details and troubleshooting, see **[info/INSTALLER.md](info/INSTALLER.md)**.
 
 **Quick summary:**
 1. Install WiX Toolset: `winget install --id WiXToolset.WiX`
-2. Update pom.xml (change type to EXE, add Windows options)
+2. Keep `pom.xml` on `<type>EXE</type>`
 3. Run: `.\build-installer.ps1`
 
-This creates `app\Clide-1.0.0.exe` - a professional installer with Start Menu integration, shortcuts, and uninstaller.
+This creates `app\Clide-1.1.0.exe` - a professional installer with Start Menu integration, shortcuts, and uninstaller.
 
 ## Project Layout
 

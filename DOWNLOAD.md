@@ -1,101 +1,31 @@
-# Download & Run Clide
+# Download & Install Clide
 
-## Easiest Way to Use Clide
+## Recommended (Windows Installer)
 
-No installation, no Java required, no setup - just download and run!
+Use the installer build:
 
-### Steps:
+1. Download `app\Clide-1.1.0.exe`
+2. Run the installer
+3. Launch Clide from Start Menu or desktop shortcut
 
-1. **Download the app folder**
-   - Clone this repository OR
-   - Download as ZIP and extract
+No separate Java installation is required.
 
-2. **Navigate to the app**
-   - Go to the `app/Clide/` folder
+## System Requirements
 
-3. **Run the application**
-   - Double-click `Clide.exe` OR
-   - From terminal: `.\app\Clide\Clide.exe`
+- Windows 10 or later
+- ~200 MB free disk space
 
-4. **Start using Clide!**
-   - Your data saves automatically in `data/taskdb.mv.db`
-   - Everything works offline
+## Upgrading
 
-### What's Included
+- Run the newer installer (for example `Clide-1.1.0.exe` -> next release)
+- Keep the same upgrade UUID in installer config for in-place upgrades
 
-- ✅ **Java Runtime** - Bundled, no separate install needed
-- ✅ **All Dependencies** - JavaFX, Spring Boot, H2 database
-- ✅ **Custom Icon** - Professional blue gradient design
-- ✅ **4 Productivity Tools**:
-  - Tasks with due dates and search
-  - Calendar view of your tasks
-  - Multiple TODO lists
-  - Notes & journaling
+## Troubleshooting
 
-### System Requirements
+- If Windows SmartScreen appears, click `More info` then `Run anyway`.
+- If the installer exits immediately, confirm WiX is installed when building and rebuild with `.\build-installer.ps1`.
+- Installer build guide: `info/INSTALLER.md`
 
-- **OS**: Windows 10 or later
-- **Disk Space**: ~150MB
-- **RAM**: 256MB minimum
-- **No Internet Required** - Works completely offline
+## Data Location
 
-### Moving or Sharing
-
-**Portable Installation:**
-- Copy the entire `app/Clide/` folder anywhere
-- Copy to USB drive for portable use
-- Share the folder with others (zip it first)
-
-**Important Files:**
-- `Clide.exe` - Main application launcher
-- `bin/` - Java runtime files
-- `lib/` - Application libraries
-- `app/` - Application JAR files
-
-### Data Location
-
-When you run Clide, it creates:
-- `data/taskdb.mv.db` - Your tasks, lists, and notes
-
-**To backup your data:**
-```powershell
-# Copy the database file
-copy data\taskdb.mv.db backup\taskdb-backup.mv.db
-```
-
-**To reset/start fresh:**
-```powershell
-# Delete the database (app will create new on next run)
-del data\taskdb.mv.db
-```
-
-### Troubleshooting
-
-**"Windows protected your PC" message:**
-- Click "More info"
-- Click "Run anyway"
-- This happens because the app isn't digitally signed
-
-**"Application failed to launch" or app briefly loads then closes:**
-- This was an issue with the installer build (.exe) - now fixed!
-- Current version uses portable app format which properly bundles Java runtime
-- Just download the `app/Clide/` folder and run `Clide.exe`
-
-**App won't start:**
-- Make sure you extracted the ENTIRE `app/Clide/` folder
-- Don't move just `Clide.exe` alone - it needs the other folders
-
-**Missing icon:**
-- Icon may take a moment to appear in Windows
-- Try creating a shortcut (right-click Clide.exe → Create shortcut)
-
-### For Developers
-
-Want to build from source or create an installer? See:
-- [README.md](README.md) - Full documentation
-- [CLAUDE.md](CLAUDE.md) - Development guide
-- [docs/INSTALLER.md](docs/INSTALLER.md) - Create Windows installer
-
----
-
-**That's it!** Enjoy using Clide for all your productivity needs.
+Clide stores data locally in `data/taskdb.mv.db`.

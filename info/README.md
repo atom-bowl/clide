@@ -18,4 +18,5 @@ Use this folder as the operator and developer handbook for the Clide app.
 ## Quick Links
 - Main README: `../README.md`
 - Build instructions: `../CLAUDE.md`
+- Installer guide: `info/INSTALLER.md`
 - Icon resources: `../src/main/resources/icons/README.md`

@@ -4,6 +4,9 @@
 Write-Host "Building Clide Windows Installer..." -ForegroundColor Green
 Write-Host ""
 
+[xml]$pomXml = Get-Content pom.xml
+$projectVersion = $pomXml.project.version
+
 # Check if WiX is installed (supports v3 candle.exe or v4/v5/v6 wix.exe)
 $wixV3 = Get-Command candle.exe -ErrorAction SilentlyContinue
 $wixV4Plus = Get-Command wix.exe -ErrorAction SilentlyContinue
@@ -14,7 +17,7 @@ if (-not $wixV3 -and -not $wixV4Plus) {
     Write-Host "Please install WiX first:" -ForegroundColor Yellow
     Write-Host "  winget install --id WiXToolset.WiX" -ForegroundColor Cyan
     Write-Host ""
-    Write-Host "Or see docs/INSTALLER.md for other installation methods" -ForegroundColor Yellow
+    Write-Host "Or see info/INSTALLER.md for other installation methods" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "After installing, restart your terminal to refresh PATH." -ForegroundColor Yellow
     exit 1
@@ -36,7 +39,7 @@ if ($pomContent -notmatch '<type>EXE</type>') {
     Write-Host "Continue anyway? (Y/N)" -ForegroundColor Cyan
     $response = Read-Host
     if ($response -ne 'Y' -and $response -ne 'y') {
-        Write-Host "Build cancelled. See docs/INSTALLER.md for configuration." -ForegroundColor Yellow
+        Write-Host "Build cancelled. See info/INSTALLER.md for configuration." -ForegroundColor Yellow
         exit 0
     }
 }
@@ -59,20 +62,13 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host ""
     Write-Host "Common issues:" -ForegroundColor Yellow
     Write-Host "1. WiX not in PATH - restart terminal after installing WiX" -ForegroundColor Cyan
-    Write-Host "2. pom.xml not configured - see docs/INSTALLER.md" -ForegroundColor Cyan
+    Write-Host "2. pom.xml not configured - see info/INSTALLER.md" -ForegroundColor Cyan
     exit 1
 }
 
 Write-Host ""
 Write-Host "Build complete!" -ForegroundColor Green
-Write-Host "Installer location: app\Clide-1.0.0.exe" -ForegroundColor Cyan
+Write-Host "Installer location: app\Clide-$projectVersion.exe" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Open the installer to install Clide." -ForegroundColor White
 Write-Host "Users do NOT need Java installed to run Clide!" -ForegroundColor Green
-while ($true) {
-    Write-Host "Thank you for using Clide!" -ForegroundColor Red
-    Start-Sleep -Milliseconds 200
-
-    Write-Host "Thank you for using Clide!" -ForegroundColor Magenta
-    Start-Sleep -Milliseconds 200
-}
