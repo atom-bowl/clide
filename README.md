@@ -8,7 +8,8 @@ A powerful desktop productivity suite with task management, calendar, TODO lists
 
 **The easiest way to use Clide:**
 
-1. Build or download `app\Clide-1.1.3.exe`
+1. Go to [landing page](https://tinyurl.com/clide-dev)
+1a. Go to [newest release](https://github.com/shankar-sachin/clide/releases/tag/v1.1.3)
 2. Run the installer
 3. Launch Clide from Start Menu/Desktop shortcut
 

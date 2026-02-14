@@ -17,5 +17,8 @@ app/Clide/
 .DS_Store
 Thumbs.db
 
+# Application data
+app/
+
 # Logs
 *.log
