@@ -2,7 +2,7 @@ spring:
   main:
     web-application-type: none
   datasource:
-    url: jdbc:h2:file:./data/taskdb;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:${clide.data-dir:${user.home}/.clide}/taskdb;AUTO_SERVER=TRUE
     driver-class-name: org.h2.Driver
     username: sa
     password:

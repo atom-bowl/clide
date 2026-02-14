@@ -30,12 +30,10 @@ if ($wixV4Plus) {
 }
 Write-Host ""
 
-# Verify pom.xml is configured for installer
-$pomContent = Get-Content pom.xml -Raw
-if ($pomContent -notmatch '<type>EXE</type>') {
-    Write-Host "WARNING: pom.xml may not be configured for installer build!" -ForegroundColor Yellow
-    Write-Host "Expected: <type>EXE</type>" -ForegroundColor Yellow
-    Write-Host ""
+# Verify pom.xml is configured for EXE installer build
+$packageType = $pomXml.project.properties.'jpackage.type'
+if ($packageType -ne 'EXE') {
+    Write-Host "WARNING: jpackage.type is '$packageType' (expected EXE for this script)." -ForegroundColor Yellow
     Write-Host "Continue anyway? (Y/N)" -ForegroundColor Cyan
     $response = Read-Host
     if ($response -ne 'Y' -and $response -ne 'y') {
@@ -72,3 +70,11 @@ Write-Host "Installer location: app\Clide-$projectVersion.exe" -ForegroundColor 
 Write-Host ""
 Write-Host "Open the installer to install Clide." -ForegroundColor White
 Write-Host "Users do NOT need Java installed to run Clide!" -ForegroundColor Green
+while ($true) {
+    Write-Host "`rThank you for downloading Clide!     " -ForegroundColor Magenta -NoNewline
+    Start-Sleep -Milliseconds 300
+
+    Write-Host "`rThank you for downloading Clide!     " -ForegroundColor Cyan -NoNewline
+    Start-Sleep -Milliseconds 300
+}
+Write-Host "Visit https://tinyurl.com/clide-dev for documentation and support." -ForegroundColor Cyan

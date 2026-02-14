@@ -8,7 +8,7 @@ A powerful desktop productivity suite with task management, calendar, TODO lists
 
 **The easiest way to use Clide:**
 
-1. Build or download `app\Clide-1.1.0.exe`
+1. Build or download `app\Clide-1.1.3.exe`
 2. Run the installer
 3. Launch Clide from Start Menu/Desktop shortcut
 
@@ -76,7 +76,7 @@ If `mvn` is not on your PATH, use:
 
 ### Pre-built Installer (Recommended for Users)
 
-The `app/Clide-1.1.0.exe` file is a Windows installer:
+The `app/Clide-1.1.3.exe` file is a Windows installer:
 - **No Java required** - runtime is bundled
 - **Windows integration** - Start Menu and shortcuts
 - **Upgrade-ready** - supports in-place updates with the same `winUpgradeUuid`
@@ -89,7 +89,7 @@ To rebuild the application:
 .\build-exe.ps1
 ```
 
-This creates `app\Clide-1.1.0.exe`.
+This creates `app\Clide-1.1.3.exe`.
 
 ### Creating a Windows Installer (.exe)
 
@@ -100,7 +100,10 @@ For installer details and troubleshooting, see **[info/INSTALLER.md](info/INSTAL
 2. Keep `pom.xml` on `<type>EXE</type>`
 3. Run: `.\build-installer.ps1`
 
-This creates `app\Clide-1.1.0.exe` - a professional installer with Start Menu integration, shortcuts, and uninstaller.
+This creates `app\Clide-1.1.3.exe` - a professional installer with Start Menu integration, shortcuts, and uninstaller.
+
+If EXE installers are blocked by policy on some systems, use MSI fallback:
+- `.\build-msi.ps1`
 
 ## Project Layout
 

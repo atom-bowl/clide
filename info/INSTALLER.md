@@ -59,7 +59,7 @@ Change the jpackage type from `APP_IMAGE` to `EXE`:
 ```xml
 <configuration>
     <name>Clide</name>
-    <appVersion>1.1.0</appVersion>
+    <appVersion>1.1.3</appVersion>
     <vendor>Clide</vendor>
     <description>A powerful desktop task manager and productivity suite</description>
     <destination>app</destination>
@@ -91,11 +91,11 @@ Change the jpackage type from `APP_IMAGE` to `EXE`:
 ```
 
 This will create:
-- `app\Clide-1.1.0.exe` - Single-file installer
+- `app\Clide-1.1.3.exe` - Single-file installer
 
 ## What the Installer Does
 
-When users run `Clide-1.1.0.exe`, they get:
+When users run `Clide-1.1.3.exe`, they get:
 - **Directory chooser** to select installation location
 - **Desktop shortcut** option
 - **Start Menu integration** (appears in Windows Start Menu)
@@ -152,7 +152,7 @@ When users run `Clide-1.1.0.exe`, they get:
 
 **Problem:** Version contains SNAPSHOT or invalid characters
 
-**Solution:** Use a numeric semantic version (for example: `1.1.0`)
+**Solution:** Use a numeric semantic version (for example: `1.1.3`)
 
 ### Build Fails After WiX Install
 
@@ -166,7 +166,7 @@ After building the installer:
 
 1. **Test it locally:**
    ```powershell
-   .\app\Clide-1.1.0.exe
+   .\app\Clide-1.1.3.exe
    ```
 
 2. **Share the file:**

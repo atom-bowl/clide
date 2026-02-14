@@ -4,7 +4,7 @@
 
 Use the installer build:
 
-1. Download `app\Clide-1.1.0.exe`
+1. Download `app\Clide-1.1.3.exe`
 2. Run the installer
 3. Launch Clide from Start Menu or desktop shortcut
 
@@ -17,7 +17,7 @@ No separate Java installation is required.
 
 ## Upgrading
 
-- Run the newer installer (for example `Clide-1.1.0.exe` -> next release)
+- Run the newer installer (for example `Clide-1.1.3.exe` -> next release)
 - Keep the same upgrade UUID in installer config for in-place upgrades
 
 ## Troubleshooting
