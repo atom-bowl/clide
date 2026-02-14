@@ -6,29 +6,47 @@ This guide explains how to create a single-file Windows installer (.exe) for Cli
 
 ### Install WiX Toolset
 
-WiX is required to create Windows installers with jpackage.
+WiX is required to create Windows installers with jpackage. Both WiX v3 and v4/v5/v6 are supported.
 
 **Option 1: Using winget (Recommended)**
 ```powershell
 winget install --id WiXToolset.WiX
 ```
 
+This installs the latest version (currently v6.x).
+
 **Option 2: Manual Download**
 1. Go to https://wixtoolset.org/releases/
-2. Download WiX Toolset (v3.14 or later recommended)
+2. Download WiX Toolset
+   - **WiX v6.x**: Modern version (recommended for new projects)
+   - **WiX v3.14**: Legacy version (still widely used)
 3. Install and add to PATH
 4. Verify installation:
    ```powershell
+   # For WiX v4/v5/v6
+   where.exe wix
+
+   # For WiX v3
    where.exe candle
    where.exe light
    ```
 
 **Option 3: Using Chocolatey**
 ```powershell
+# Latest version (v6.x)
 choco install wixtoolset
+
+# Or specific WiX v3 if needed
+choco install wixtoolset --version=3.14
 ```
 
-After installation, **restart your terminal** to refresh PATH.
+**IMPORTANT:** After installation, **restart your terminal** to refresh PATH.
+
+### Version Compatibility
+
+- **WiX v3.x**: Uses `candle.exe` and `light.exe` - fully supported
+- **WiX v4/v5/v6**: Uses unified `wix.exe` - fully supported
+- jpackage automatically detects and works with both versions
 
 ## Build Configuration
 
@@ -97,19 +115,36 @@ When users run `Clide-1.0.0.exe`, they get:
 
 ### "Cannot find WiX tools" Error
 
-**Problem:** jpackage can't find candle.exe/light.exe
+**Problem:** jpackage can't find WiX executables
 
 **Solution:**
 1. Verify WiX is in PATH:
    ```powershell
+   # Check for any version
+   Get-Command wix.exe -ErrorAction SilentlyContinue
+   Get-Command candle.exe -ErrorAction SilentlyContinue
+
+   # Or search PATH
    $env:PATH -split ';' | Select-String -Pattern 'wix'
    ```
+
 2. Add manually if needed:
    ```powershell
+   # For WiX v6 (typical installation path)
+   $env:PATH += ";C:\Program Files\dotnet\tools"
+
+   # For WiX v3 (typical installation path)
    $env:PATH += ";C:\Program Files (x86)\WiX Toolset v3.14\bin"
    ```
-3. Restart terminal
-4. Try build again
+
+3. **Restart your terminal** (most important step!)
+
+4. Try build again:
+   ```powershell
+   .\build-installer.ps1
+   ```
+
+**Note:** WiX v6 installs as a .NET tool, so it may be in `%USERPROFILE%\.dotnet\tools` or `C:\Program Files\dotnet\tools`
 
 ### "Invalid version" Error
 

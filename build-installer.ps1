@@ -4,19 +4,27 @@
 Write-Host "Building Clide Windows Installer..." -ForegroundColor Green
 Write-Host ""
 
-# Check if WiX is installed
-$wixCheck = Get-Command candle.exe -ErrorAction SilentlyContinue
-if (-not $wixCheck) {
+# Check if WiX is installed (supports v3 candle.exe or v4/v5/v6 wix.exe)
+$wixV3 = Get-Command candle.exe -ErrorAction SilentlyContinue
+$wixV4Plus = Get-Command wix.exe -ErrorAction SilentlyContinue
+
+if (-not $wixV3 -and -not $wixV4Plus) {
     Write-Host "ERROR: WiX Toolset not found!" -ForegroundColor Red
     Write-Host ""
     Write-Host "Please install WiX first:" -ForegroundColor Yellow
     Write-Host "  winget install --id WiXToolset.WiX" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Or see docs/INSTALLER.md for other installation methods" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "After installing, restart your terminal to refresh PATH." -ForegroundColor Yellow
     exit 1
 }
 
-Write-Host "WiX Toolset found: $($wixCheck.Source)" -ForegroundColor Green
+if ($wixV4Plus) {
+    Write-Host "WiX Toolset v4+ found: $($wixV4Plus.Source)" -ForegroundColor Green
+} else {
+    Write-Host "WiX Toolset v3 found: $($wixV3.Source)" -ForegroundColor Green
+}
 Write-Host ""
 
 # Verify pom.xml is configured for installer
