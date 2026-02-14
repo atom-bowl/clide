@@ -2,9 +2,20 @@
 
 Use this folder as the operator and developer handbook for the Clide app.
 
-- `info/setup.md`: install Java/Maven and run the app
-- `info/usage.md`: how to use the UI effectively
-- `info/architecture.md`: code structure and data flow
-- `info/development.md`: how to add features and make safe changes
-- `info/testing.md`: test suite and test commands
-- `info/troubleshooting.md`: common issues and fixes
+## Getting Started
+- `info/setup.md`: Install Java/Maven and run the app
+- `info/usage.md`: How to use all four tabs (Tasks, Calendar, TODO Lists, Notes)
+
+## Development
+- `info/architecture.md`: Code structure, data flow, and TabPane design
+- `info/development.md`: How to add features, work with tabs, and build commands
+- `info/testing.md`: Test suite and test commands
+
+## Reference
+- `info/stack.md`: Technology stack details
+- `info/troubleshooting.md`: Common issues and fixes
+
+## Quick Links
+- Main README: `../README.md`
+- Build instructions: `../CLAUDE.md`
+- Icon resources: `../src/main/resources/icons/README.md`

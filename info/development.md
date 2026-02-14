@@ -2,14 +2,25 @@
 
 ## Useful Commands
 
+### Run and Test
 ```powershell
-mvn clean test
-mvn test
-mvn javafx:run
+mvn clean test       # Run all tests
+mvn test            # Run tests without clean
+mvn javafx:run      # Launch the application
+```
+
+### Build Windows Application
+```powershell
+.\build-exe.ps1     # Build portable app at app/Clide/
+```
+
+### Icon Generation
+```powershell
+pip install Pillow  # First time only
+python create-icon.py  # Generate clide.ico
 ```
 
 Use project-local Maven cache if needed:
-
 ```powershell
 mvn "-Dmaven.repo.local=.m2" clean test
 ```
@@ -37,8 +48,45 @@ mvn "-Dmaven.repo.local=.m2" clean test
 
 ## Adding a New Field to Task
 
-1. Update `Task.java`
+1. Update `Task.java` entity
 2. Update `TaskDto`, create/update commands
 3. Update service mapping in `TaskServiceImpl`
-4. Update UI form and table
+4. Update UI form and table in `TasksView`
 5. Add tests for create/update/filter impacts
+
+## Adding a New Tab
+
+1. Create new view component in `ui/` (e.g., `MyFeatureView.java`)
+2. Add domain entities if needed in `domain/`
+3. Create repository in `repo/`
+4. Implement service in `service/`
+5. Add tab to `MainView.java`:
+   ```java
+   Tab myTab = new Tab("My Feature", myFeatureView.getRoot());
+   tabPane.getTabs().add(myTab);
+   ```
+6. Add refresh logic in tab selection listener
+7. Update `info/usage.md` with usage instructions
+8. Update `info/architecture.md` with architecture details
+
+## Working with Existing Tabs
+
+### Tasks Tab (`TasksView`)
+- Main task CRUD operations
+- Uses `MainController` for business logic
+- Integrates with `TaskSearch.kt` for search ranking
+
+### Calendar Tab (`CalendarView`)
+- Read-only view of tasks by due date
+- Loads data via `MainController`
+- Visual calendar grid generation
+
+### TODO Lists Tab (`TodoListsView`)
+- Manages `TodoList` and `TodoItem` entities
+- Direct service calls to `TodoListService`
+- Bidirectional parent-child relationship
+
+### Notes Tab (`NotesView`)
+- Simple CRUD for `Note` entities
+- Direct service calls to `NoteService`
+- Timestamp-based sorting
