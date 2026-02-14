@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>task-manager-desktop</artifactId>
+    <artifactId>clide</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>task-manager-desktop</name>
+    <name>Clide</name>
 
     <properties>
         <java.version>21</java.version>
@@ -128,6 +128,64 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.6.5</version>
+                <configuration>
+                    <name>Clide</name>
+                    <appVersion>1.0.0</appVersion>
+                    <vendor>Clide</vendor>
+                    <description>A powerful desktop task manager and productivity suite</description>
+                    <destination>app</destination>
+                    <type>APP_IMAGE</type>
+                    <input>target/libs</input>
+                    <mainJar>${project.artifactId}-${project.version}.jar</mainJar>
+                    <mainClass>com.example.taskmanager.ApplicationLauncher</mainClass>
+                    <icon>src/main/resources/icons/clide.ico</icon>
+                    <javaOptions>
+                        <option>-Dfile.encoding=UTF-8</option>
+                        <option>--add-opens</option>
+                        <option>javafx.graphics/javafx.css=ALL-UNNAMED</option>
+                    </javaOptions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.8.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-artifact</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>jar</type>
+                                    <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

@@ -1,5 +1,6 @@
 # Build outputs
 target/
+app/
 
 # Local Maven repository used in this project
 .m2/

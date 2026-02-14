@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn clean compile:*)",
+      "Bash(mvn test:*)",
+      "Bash(timeout 120 bash:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(mvn clean package:*)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File build-exe.ps1)",
+      "Bash(mvn clean install:*)",
+      "Bash(mvn jpackage:jpackage:*)",
+      "Bash(python create-icon.py:*)",
+      "Bash(pip install:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
