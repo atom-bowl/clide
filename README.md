@@ -1,4 +1,4 @@
-# Task Manager Desktop
+# Clide Desktop
 
 A JavaFX desktop task manager built with Spring Boot, JPA, H2, and Kotlin-assisted search ranking.
 
