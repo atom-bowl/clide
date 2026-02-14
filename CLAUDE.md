@@ -33,10 +33,12 @@ This creates a portable Windows app at `app/Clide/Clide.exe` that bundles the JR
 Run directly: `.\app\Clide\Clide.exe`
 
 ### To create a Windows installer (.exe) instead:
-1. Install WiX Toolset (https://wixtoolset.org/)
-2. In pom.xml, change `<type>APP_IMAGE</type>` to `<type>EXE</type>`
-3. Uncomment Windows installer options
-4. Rebuild with `.\build-exe.ps1`
+See `docs/INSTALLER.md` for complete guide. Quick steps:
+1. Install WiX: `winget install --id WiXToolset.WiX`
+2. Configure pom.xml (type=EXE, add Windows options)
+3. Run: `.\build-installer.ps1`
+
+This creates a professional installer at `app\Clide-1.0.0.exe`
 
 ## Main code map
 - `src/main/java/com/example/taskmanager/ui` - JavaFX view/controller wiring

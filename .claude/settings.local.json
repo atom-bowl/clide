@@ -11,7 +11,8 @@
       "Bash(mvn jpackage:jpackage:*)",
       "Bash(python create-icon.py:*)",
       "Bash(pip install:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

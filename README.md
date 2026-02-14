@@ -79,22 +79,14 @@ This creates `app\Clide\` - a portable application folder that bundles the JRE a
 
 ### Creating a Windows Installer (.exe)
 
-To create an installer instead of a portable app:
+To create a single-file installer instead of a portable app, see **[docs/INSTALLER.md](docs/INSTALLER.md)** for complete instructions.
 
-1. **Install WiX Toolset:**
-   - Download from https://wixtoolset.org/
-   - Add to PATH
+**Quick summary:**
+1. Install WiX Toolset: `winget install --id WiXToolset.WiX`
+2. Update pom.xml (change type to EXE, add Windows options)
+3. Run: `.\build-installer.ps1`
 
-2. **Update pom.xml:**
-   - Change `<type>APP_IMAGE</type>` to `<type>EXE</type>`
-   - Uncomment Windows installer options (winMenu, winShortcut, etc.)
-
-3. **Rebuild:**
-   ```powershell
-   .\build-exe.ps1
-   ```
-
-This will create `app\Clide-1.0.0.exe` installer.
+This creates `app\Clide-1.0.0.exe` - a professional installer with Start Menu integration, shortcuts, and uninstaller.
 
 ## Project Layout
 
