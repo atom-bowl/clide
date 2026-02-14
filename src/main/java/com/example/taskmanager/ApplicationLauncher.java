@@ -23,7 +23,7 @@ public class ApplicationLauncher extends Application {
         MainView mainView = context.getBean(MainView.class);
         Scene scene = new Scene(mainView.getRoot(), 1000, 680);
 
-        stage.setTitle("Task Manager");
+        stage.setTitle("Clide Desktop");
         stage.setMinWidth(840);
         stage.setMinHeight(560);
         stage.setScene(scene);

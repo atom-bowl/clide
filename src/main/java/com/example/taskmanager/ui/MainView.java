@@ -61,7 +61,7 @@ public class MainView {
     private void buildLayout() {
         root.setPadding(new Insets(18));
 
-        Label header = new Label("Task Manager");
+        Label header = new Label("Clide");
         header.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
 
         HBox filters = new HBox(10);

@@ -1,6 +1,6 @@
 # Documentation Index
 
-Use this folder as the operator and developer handbook for the Task Manager app.
+Use this folder as the operator and developer handbook for the Clide app.
 
 - `info/setup.md`: install Java/Maven and run the app
 - `info/usage.md`: how to use the UI effectively
