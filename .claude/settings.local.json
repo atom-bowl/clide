@@ -15,7 +15,12 @@
       "Bash(git commit:*)",
       "Bash(powershell.exe -Command \"Get-Command candle.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
       "Bash(git push:*)",
-      "Bash(powershell.exe -Command \"Get-Command wix.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")"
+      "Bash(powershell.exe -Command \"Get-Command wix.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(./build-exe.ps1)",
+      "Bash(ls:*)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)",
+      "Bash(git rm:*)"
     ]
   }
 }
