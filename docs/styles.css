@@ -1,11 +1,12 @@
 :root {
-    --bg-1: #f4f7fb;
-    --bg-2: #dce6f5;
-    --card: #ffffff;
-    --text: #1d2633;
-    --muted: #4d5e75;
-    --accent: #1463ff;
-    --accent-hover: #0f4dca;
+    --bg: #f2f0eb;
+    --surface: #fffdf8;
+    --text: #1f232b;
+    --muted: #5f6778;
+    --line: #ded8cc;
+    --accent: #c04f2f;
+    --accent-hover: #a53f22;
+    --accent-soft: #f6e2d5;
 }
 
 * {
@@ -14,68 +15,207 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
-    font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+    font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
     color: var(--text);
-    background: radial-gradient(circle at top, var(--bg-2), var(--bg-1) 48%);
-    display: grid;
-    grid-template-rows: 1fr auto;
+    background:
+        radial-gradient(circle at 8% 16%, #efe5cf 0%, rgba(239, 229, 207, 0) 38%),
+        radial-gradient(circle at 88% 12%, #e4efe4 0%, rgba(228, 239, 228, 0) 36%),
+        var(--bg);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-.landing {
-    display: grid;
-    place-items: center;
-    padding: 2rem 1rem;
+.bg-orb {
+    position: fixed;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(56px);
+    opacity: 0.36;
+    pointer-events: none;
+}
+
+.bg-orb-left {
+    width: 280px;
+    height: 280px;
+    background: #f2c9a4;
+    top: -80px;
+    left: -90px;
+}
+
+.bg-orb-right {
+    width: 320px;
+    height: 320px;
+    background: #c8e4d1;
+    top: -110px;
+    right: -110px;
+}
+
+.page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 2rem 1rem 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero {
-    width: min(680px, 100%);
-    text-align: center;
-    background: var(--card);
-    border-radius: 18px;
-    padding: 2.5rem 1.5rem;
-    box-shadow: 0 14px 40px rgba(28, 60, 116, 0.16);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1.25rem;
+    background: rgba(255, 253, 248, 0.82);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 1.3rem;
+    box-shadow: 0 14px 42px rgba(43, 36, 26, 0.08);
 }
 
 .kicker {
-    margin: 0 0 0.8rem;
+    margin: 0 0 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--accent);
+    font-size: 0.9rem;
 }
 
 h1 {
     margin: 0;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    font-family: "Trebuchet MS", "Century Gothic", sans-serif;
 }
 
 .subtext {
-    margin: 1rem auto 1.8rem;
-    max-width: 52ch;
+    margin: 1rem 0 1.4rem;
     color: var(--muted);
     line-height: 1.5;
+    max-width: 56ch;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 0.9rem 1.4rem;
+    padding: 0.85rem 1.25rem;
     border-radius: 12px;
     text-decoration: none;
     font-weight: 700;
     color: #fff;
     background: var(--accent);
-    transition: transform 140ms ease, background-color 140ms ease;
+    transition: transform 160ms ease, background-color 160ms ease;
 }
 
 .download-btn:hover,
 .download-btn:focus-visible {
     background: var(--accent-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+}
+
+.ghost-btn {
+    display: inline-block;
+    padding: 0.82rem 1.15rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    background: #fff;
+    transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.ghost-btn:hover,
+.ghost-btn:focus-visible {
+    transform: translateY(-2px);
+    border-color: #c8b495;
+}
+
+.hero-demo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    min-height: 260px;
+}
+
+.section {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+    background: rgba(255, 253, 248, 0.82);
+    border-radius: 20px;
+    padding: 1.2rem;
+}
+
+.section h2 {
+    margin: 0 0 0.75rem;
+    font-family: "Trebuchet MS", "Century Gothic", sans-serif;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.feature-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 0.95rem;
+}
+
+.feature-card h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+.about p {
+    margin: 0.6rem 0 0;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 440ms ease, transform 440ms ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .site-footer {
     text-align: center;
-    padding: 1rem;
+    padding: 1.1rem;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 0.88rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-demo img {
+        min-height: 220px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
 }
