@@ -42,7 +42,7 @@ If `mvn` is not on your PATH, use:
 ## Project Layout
 
 ```text
-src/main/java/com/example/taskmanager
+src/main/java/com/example/clide
   ApplicationLauncher.java
   TaskManagerApplication.java
   domain/
@@ -50,9 +50,9 @@ src/main/java/com/example/taskmanager
   repo/
   service/
   ui/
-src/main/kotlin/com/example/taskmanager/search
+src/main/kotlin/com/example/clide/search
   TaskSearch.kt
-src/test/java/com/example/taskmanager
+src/test/java/com/example/clide
   integration/
   search/
   service/
