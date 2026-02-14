@@ -2,6 +2,9 @@
 
 A JavaFX desktop task manager built with Spring Boot, JPA, H2, and Kotlin-assisted search ranking.
 
+![Demo](data/images/demo.gif)
+
+
 ## Features
 
 - Create, update, delete tasks
