@@ -74,7 +74,12 @@ del data\taskdb.mv.db
 **"Windows protected your PC" message:**
 - Click "More info"
 - Click "Run anyway"
-- This happens because the app isn't digitally signed (yet)
+- This happens because the app isn't digitally signed
+
+**"Application failed to launch" or app briefly loads then closes:**
+- This was an issue with the installer build (.exe) - now fixed!
+- Current version uses portable app format which properly bundles Java runtime
+- Just download the `app/Clide/` folder and run `Clide.exe`
 
 **App won't start:**
 - Make sure you extracted the ENTIRE `app/Clide/` folder

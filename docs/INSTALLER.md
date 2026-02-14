@@ -1,6 +1,8 @@
 # Creating a Windows Installer
 
-This guide explains how to create a single-file Windows installer (.exe) for Clide.
+**NOTE:** The current build uses APP_IMAGE (portable app) instead of EXE installer due to JRE bundling issues with Java 24 and WiX. The portable app works perfectly - users just download the `app/Clide/` folder and run `Clide.exe`.
+
+This guide explains how to create a single-file Windows installer (.exe) for Clide if needed in the future.
 
 ## Prerequisites
 

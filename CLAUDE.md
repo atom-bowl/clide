@@ -40,13 +40,12 @@ To rebuild the app from source:
 
 This creates a portable Windows app at `app/Clide/Clide.exe` that bundles the JRE and all dependencies.
 
-### To create a Windows installer (.exe) instead:
-See `docs/INSTALLER.md` for complete guide. Quick steps:
-1. Install WiX: `winget install --id WiXToolset.WiX`
-2. Configure pom.xml (type=EXE, add Windows options)
-3. Run: `.\build-installer.ps1`
+**Current build type**: APP_IMAGE (portable app folder)
+- Works perfectly with Java 24
+- No installation required
+- JRE fully bundled
 
-This creates a professional installer at `app\Clide-1.0.0.exe`
+**Note on Windows installer (.exe)**: The EXE installer type had JRE bundling issues with Java 24, so we use the portable app format instead. See `docs/INSTALLER.md` for details if you want to try building an installer in the future.
 
 ## Main code map
 - `src/main/java/com/example/taskmanager/ui` - JavaFX view/controller wiring
