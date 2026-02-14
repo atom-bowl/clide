@@ -1,8 +1,18 @@
 # Clide Desktop
 
-A JavaFX desktop task manager built with Spring Boot, JPA, H2, and Kotlin-assisted search ranking.
+A powerful desktop productivity suite with task management, calendar, TODO lists, and notes - all in one app.
 
 ![Demo](data/images/demo.gif)
+
+## 🚀 Quick Start (No Installation Required!)
+
+**The easiest way to use Clide:**
+
+1. **Download** the `app/` folder from this repository
+2. **Run** `app\Clide\Clide.exe`
+3. **That's it!** No Java installation needed - everything is bundled.
+
+The app runs completely offline and stores all your data locally.
 
 
 ## Features
@@ -43,9 +53,11 @@ A JavaFX desktop task manager built with Spring Boot, JPA, H2, and Kotlin-assist
 - Spring Data JPA + H2
 - Kotlin (search helper module)
 
-## Quick Start
+## 💻 For Developers
 
-1. Install Java and Maven.
+### Running from Source
+
+1. Install Java 21+ and Maven
 2. From repo root, run:
 
 ```powershell
@@ -60,22 +72,30 @@ If `mvn` is not on your PATH, use:
 & 'C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.12\bin\mvn.cmd' javafx:run
 ```
 
-## Build Native Application
+## 📦 Distribution
 
-To create a standalone Windows application:
+### Pre-built App (Recommended for Users)
+
+The `app/Clide/` folder contains a ready-to-run Windows application:
+- **No Java required** - JRE is bundled
+- **No installation** - just download and run
+- **Portable** - copy to USB drive or anywhere
+- **Size**: ~100MB (includes everything needed)
+
+**To distribute:**
+1. Zip the `app/Clide/` folder
+2. Share the zip file
+3. Users extract and run `Clide.exe`
+
+### Building from Source
+
+To rebuild the application:
 
 ```powershell
 .\build-exe.ps1
 ```
 
 This creates `app\Clide\` - a portable application folder that bundles the JRE and all dependencies.
-
-**To run the app:**
-```powershell
-.\app\Clide\Clide.exe
-```
-
-**No Java installation required!** The app includes everything needed to run.
 
 ### Creating a Windows Installer (.exe)
 

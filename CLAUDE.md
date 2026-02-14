@@ -1,9 +1,11 @@
 # Clide: Quick Working Notes
 
 ## What this app is
-- Desktop task manager built with JavaFX + Spring Boot.
-- No HTTP API; Spring runs in-process for DI/services/persistence.
-- Data is stored in local H2 file DB at `data/taskdb.mv.db`.
+- Desktop productivity suite built with JavaFX + Spring Boot
+- Features: Task management, Calendar, TODO Lists, Notes
+- No HTTP API; Spring runs in-process for DI/services/persistence
+- Data is stored in local H2 file DB at `data/taskdb.mv.db`
+- Pre-built app available in `app/Clide/` - just download and run!
 
 ## Tech stack
 - Java 21+ (project tested on newer runtimes too)
@@ -23,14 +25,20 @@ If local Maven cache permissions are restricted:
 mvn "-Dmaven.repo.local=.m2" clean test
 ```
 
+## Using the pre-built app
+The `app/Clide/` folder contains a ready-to-run Windows application:
+```powershell
+.\app\Clide\Clide.exe
+```
+No Java installation required! Just download the app folder and run.
+
 ## Build Windows application
+To rebuild the app from source:
 ```powershell
 .\build-exe.ps1
 ```
 
 This creates a portable Windows app at `app/Clide/Clide.exe` that bundles the JRE and all dependencies.
-
-Run directly: `.\app\Clide\Clide.exe`
 
 ### To create a Windows installer (.exe) instead:
 See `docs/INSTALLER.md` for complete guide. Quick steps:

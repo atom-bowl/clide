@@ -67,5 +67,12 @@ Write-Host ""
 Write-Host "Build complete!" -ForegroundColor Green
 Write-Host "Installer location: app\Clide-1.0.0.exe" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Test the installer or share this file for distribution." -ForegroundColor White
+Write-Host "Open the installer to install Clide." -ForegroundColor White
 Write-Host "Users do NOT need Java installed to run Clide!" -ForegroundColor Green
+while ($true) {
+    Write-Host "Thank you for using Clide!" -ForegroundColor Red
+    Start-Sleep -Milliseconds 200
+
+    Write-Host "Thank you for using Clide!" -ForegroundColor Magenta
+    Start-Sleep -Milliseconds 200
+}

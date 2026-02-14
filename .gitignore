@@ -1,6 +1,6 @@
 # Build outputs
 target/
-app/
+app/Clide/
 
 # Local Maven repository used in this project
 .m2/

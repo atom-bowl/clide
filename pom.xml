@@ -139,7 +139,7 @@
                     <vendor>Clide</vendor>
                     <description>A powerful desktop task manager and productivity suite</description>
                     <destination>app</destination>
-                    <type>APP_IMAGE</type>
+                    <type>EXE</type>
                     <input>target/libs</input>
                     <mainJar>${project.artifactId}-${project.version}.jar</mainJar>
                     <mainClass>com.example.taskmanager.ApplicationLauncher</mainClass>
@@ -149,6 +149,13 @@
                         <option>--add-opens</option>
                         <option>javafx.graphics/javafx.css=ALL-UNNAMED</option>
                     </javaOptions>
+                    <winMenu>true</winMenu>
+                    <winDirChooser>true</winDirChooser>
+                    <winShortcut>true</winShortcut>
+                    <winShortcutPrompt>true</winShortcutPrompt>
+                    <winMenuGroup>Clide</winMenuGroup>
+                    <winPerUserInstall>false</winPerUserInstall>
+                    <winUpgradeUuid>a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d</winUpgradeUuid>
                 </configuration>
             </plugin>
             <plugin>
